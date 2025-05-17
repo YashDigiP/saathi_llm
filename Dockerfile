@@ -19,6 +19,9 @@ RUN useradd -m ollama && chown -R ollama:ollama /home/ollama
 ENV PATH="/usr/local/bin:${PATH}"
 ENV PYTHONUNBUFFERED=1
 
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
 # Switch to ollama user
 USER ollama
 WORKDIR /home/ollama
@@ -37,8 +40,5 @@ HEALTHCHECK --interval=30s --timeout=30s --retries=3 \
 
 # ✅ Correct — foregrounded
 CMD ["ollama", "serve"]
-
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
 
 CMD ["/entrypoint.sh"]
