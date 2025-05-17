@@ -37,3 +37,5 @@ HEALTHCHECK --interval=30s --timeout=30s --retries=3 \
 
 # ✅ Correct — foregrounded
 CMD ["ollama", "serve"]
+
+CMD ["/entrypoint.sh"]
