@@ -6,6 +6,15 @@ RUN apt-get update && apt-get install -y \
   curl gnupg unzip git net-tools \
   && rm -rf /var/lib/apt/lists/*
 
+
+# Install Google Cloud SDK (for gsutil)
+RUN curl -sSL https://packages.cloud.google.com/apt/doc/apt-key.gpg \
+    | gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg && \
+    echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" \
+    > /etc/apt/sources.list.d/google-cloud-sdk.list && \
+    apt-get update && apt-get install -y google-cloud-sdk
+
+
 # Install Ollama
 RUN curl -fsSL https://ollama.com/install.sh | sh
 
