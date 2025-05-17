@@ -21,6 +21,10 @@ chown -R ollama:ollama "$MODEL_DIR"
 echo "📂 Copied model contents:"
 ls -lh "$MODEL_DIR"/models || echo "⚠️ No models directory found!"
 
+# ✅ Start Ollama server
+echo "📋 Starting Ollama server:"
+ollama serve || echo "⚠️ Failed to start server."
+
 # ✅ Show models available to Ollama
 echo "📋 Listing available Ollama models:"
 ollama list || echo "⚠️ Failed to list models."
