@@ -38,4 +38,7 @@ HEALTHCHECK --interval=30s --timeout=30s --retries=3 \
 # ✅ Correct — foregrounded
 CMD ["ollama", "serve"]
 
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
 CMD ["/entrypoint.sh"]
