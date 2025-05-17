@@ -20,6 +20,3 @@ chown -R ollama:ollama "$MODEL_DIR"
 # Show contents
 echo "📂 Copied model contents:"
 ls -lh "$MODEL_DIR"/models || echo "⚠️ No models directory found!"
-
-echo "🚀 Starting Ollama..."
-exec ollama serve --port "${PORT:-11434}"
