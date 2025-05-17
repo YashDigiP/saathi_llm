@@ -33,8 +33,8 @@ WORKDIR /home/ollama
 EXPOSE 11434
 
 # Healthcheck (optional)
-# HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
-  # CMD curl -f http://localhost:11434 || exit 1
+HEALTHCHECK --interval=30s --timeout=1000s --start-period=10s --retries=3 \
+ CMD curl -f http://localhost:11434 || exit 1
 
 CMD ["sh", "-c", "ollama serve & sleep 5"]
 
