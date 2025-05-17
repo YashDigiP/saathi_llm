@@ -33,4 +33,4 @@ HEALTHCHECK --interval=30s --timeout=30s --retries=3 \
 CMD ["/entrypoint.sh"]
 
 # Run ollama serve and pull the mistral model after a short wait
-# CMD ["sh", "-c", "ollama serve & sleep 5"]
+CMD ["sh", "-c", "ollama serve & sleep 5"]
