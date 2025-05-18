@@ -5,7 +5,7 @@ set -e
 echo "📋 Starting Ollama server:"
 ollama serve || echo "⚠️ Failed to start server."
 
-ollama pull mistral
+ollama pull mistral || echo "⚠️ Failed to pull mistral."
 
 # ✅ Show models available to Ollama
 echo "📋 Listing available Ollama models:"
