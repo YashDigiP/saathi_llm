@@ -7,7 +7,7 @@ echo "📥 Downloading models from GCS..."
 
 mkdir -p "$MODEL_DIR"
 
-if gsutil -m cp -r gs://llm_models_ollama/ollama-models/* "$MODEL_DIR/"; then
+if gsutil -m cp -r gs://saathidocker/ollama-models/* "$MODEL_DIR/"; then
     echo "✅ GCS model copy successful."
 else
     echo "❌ GCS model copy failed!" >&2
